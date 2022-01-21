@@ -1,0 +1,12 @@
+{
+	"name": "C# Formatter (Go 1.17.6 - Debian Bullseye)",
+	"dockerFile": "Dockerfile",
+	"extensions": [
+		"editorconfig.editorconfig",
+		"mhutchie.git-graph",
+		"github.copilot",
+		"eamodio.gitlens",
+		"usernamehw.errorlens",
+		"golang.go"
+	]
+}

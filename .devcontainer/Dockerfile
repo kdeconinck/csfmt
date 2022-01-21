@@ -23,15 +23,10 @@
 # ==                OTHER DEALINGS IN THE SOFTWARE.
 # ======================================================================================================================
 
-# Indicate that this is the `ROOT` configuration file.
-root = true
+# Create a docker container, based on the offial Go 1.17.6 - Bullseye (Debian) image.
+FROM golang:1.17.6-bullseye
 
-# Use `CR LF` lines endings and end every file with a final newline.
-[*]
-end_of_line = crlf
-insert_final_newline = true
-
-# Use a 4 character wide TAB to indent `*.json` files.
-[*.json]
-indent_size = 4
-indent_style = tab
+# Update the package cache and install `git`, `zsh` and `oh-my-zsh`.
+RUN apt update &&\
+    apt install -y git zsh &&\
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
